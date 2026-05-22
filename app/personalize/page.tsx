@@ -281,7 +281,7 @@ export default function PersonalizeTree() {
   const prevStep = () => setStep(s => Math.max(s - 1, 1));
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-emerald-50/20 dark:to-emerald-950/10 pt-20 md:pt-28 pb-32 md:pb-44">
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-emerald-50/20 dark:to-emerald-950/10 pt-20 md:pt-28 pb-48 md:pb-44">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Real Native App Vibe Progress indicator */}
@@ -908,7 +908,7 @@ export default function PersonalizeTree() {
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="fixed bottom-5 md:bottom-6 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:right-auto md:w-full md:max-w-4xl z-50 px-0 sm:px-4"
+          className="fixed bottom-24 md:bottom-6 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:right-auto md:w-full md:max-w-4xl z-40 px-0 sm:px-4"
         >
           <div className="bg-white/85 dark:bg-[#112015]/95 backdrop-blur-xl border border-primary/10 dark:border-emerald-800/30 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-3xl p-4 flex flex-row items-center justify-between gap-4">
             
