@@ -447,9 +447,9 @@ export default function PersonalizeTree() {
                               key={tree.id}
                               type="button"
                               onClick={() => handleTreeSelect(tree)}
-                              className={`snap-center shrink-0 w-[160px] p-4 rounded-3xl border-2 text-left transition-all duration-300 relative flex flex-col justify-between min-h-[140px] ${isSelected
-                                  ? "border-emerald-500 bg-emerald-500/5 shadow-lg scale-102"
-                                  : "border-border bg-white/40 dark:bg-emerald-950/10 hover:border-emerald-500/50"
+                              className={`snap-center shrink-0 w-[160px] p-4 rounded-3xl text-left transition-all duration-300 relative flex flex-col justify-between min-h-[140px] ${isSelected
+                                  ? "border-[3px] border-emerald-500 bg-emerald-500/5 shadow-lg scale-102 ring-2 ring-emerald-500/20"
+                                  : "border-2 border-border bg-white/40 dark:bg-emerald-950/10 hover:border-emerald-500/50"
                                 }`}
                             >
                               <div className="flex justify-between items-start w-full">
@@ -526,9 +526,9 @@ export default function PersonalizeTree() {
                           <button
                             key={tree.id}
                             onClick={() => handleTreeSelect(tree)}
-                            className={`p-4 md:p-5 rounded-2xl md:rounded-[1.5rem] border-2 text-left transition-all duration-300 relative flex flex-col justify-between min-h-[170px] md:min-h-[185px] ${isSelected
-                                ? "border-emerald-500 bg-emerald-500/5 shadow-xl shadow-emerald-500/5 scale-102"
-                                : "border-border bg-white/40 dark:bg-emerald-950/10 hover:border-emerald-500/50 hover:bg-emerald-500/5"
+                            className={`p-4 md:p-5 rounded-2xl md:rounded-[1.5rem] text-left transition-all duration-300 relative flex flex-col justify-between min-h-[170px] md:min-h-[185px] ${isSelected
+                                ? "border-[3px] border-emerald-500 bg-emerald-500/5 shadow-xl shadow-emerald-500/5 scale-102 ring-2 ring-emerald-500/20"
+                                : "border-2 border-border bg-white/40 dark:bg-emerald-950/10 hover:border-emerald-500/50 hover:bg-emerald-500/5"
                               }`}
                           >
                             <div>

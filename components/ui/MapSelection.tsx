@@ -240,19 +240,21 @@ export default function MapSelection({ onLocationSelect }: { onLocationSelect: (
         <AnimatePresence>
           {position && selectedZoneId && (
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              initial={{ opacity: 0, y: -12, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="absolute top-4 left-4 right-4 bg-white/95 dark:bg-[#112015]/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl z-[400] border-2 border-emerald-500/30 flex items-center justify-between gap-3 text-emerald-800 dark:text-emerald-300 text-xs font-black shadow-emerald-500/5"
+              exit={{ opacity: 0, y: -12, scale: 0.95 }}
+              className="absolute top-2.5 left-2.5 right-2.5 bg-white/95 dark:bg-[#112015]/95 backdrop-blur-md px-3 py-2 rounded-xl shadow-lg z-[400] border border-emerald-500/30 flex items-center justify-between gap-2"
             >
-              <div className="flex items-center gap-2">
-                <span className="flex h-2.5 w-2.5 relative shrink-0">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="flex h-2 w-2 relative shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span>Active Sector Tagged: <strong className="text-emerald-600 dark:text-emerald-400 font-extrabold">{PLANTING_ZONES.find(z => z.id === selectedZoneId)?.name}</strong></span>
+                <span className="text-[11px] font-semibold text-foreground/70 truncate">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-black">📍 {PLANTING_ZONES.find(z => z.id === selectedZoneId)?.name}</span>
+                </span>
               </div>
-              <span className="text-[10px] text-foreground/50 font-semibold shrink-0">GPS sent post-planting 📍</span>
+              <span className="text-[10px] text-foreground/40 font-medium shrink-0">GPS post-planting</span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -261,33 +263,27 @@ export default function MapSelection({ onLocationSelect }: { onLocationSelect: (
         <AnimatePresence>
           {showWarning && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="absolute inset-x-4 bottom-4 bg-[#fffefe]/95 dark:bg-[#122216]/95 backdrop-blur-md p-5 rounded-[1.5rem] shadow-2xl z-[400] border-2 border-red-500/30 flex flex-col md:flex-row items-center justify-between gap-4"
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              className="absolute inset-x-3 bottom-3 bg-[#fffefe]/97 dark:bg-[#122216]/97 backdrop-blur-md px-3.5 py-2.5 rounded-2xl shadow-xl z-[400] border border-red-500/25 flex items-center justify-between gap-3"
             >
-              <div className="flex items-start gap-3.5 text-left">
-                <div className="bg-red-500/10 dark:bg-red-500/20 p-2.5 rounded-xl mt-0.5 text-red-500">
-                  <AlertCircle className="w-5 h-5" />
+              <div className="flex items-center gap-2.5 text-left min-w-0">
+                <div className="bg-red-500/10 p-1.5 rounded-lg text-red-500 shrink-0">
+                  <AlertCircle className="w-4 h-4" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm md:text-base text-red-600 dark:text-red-400">
-                    Planting Zone Not Available Yet
-                  </h4>
-                  <p className="text-xs text-foreground/75 leading-relaxed font-semibold">
-                    Tree planting is currently active <strong className="text-emerald-600 dark:text-emerald-400">ONLY</strong> in Mumbai (Virar, Ghatkopar, Aarey, or Borivali/Kandivali).
-                  </p>
-                  <p className="text-2xs text-foreground/60 leading-normal">
-                    🌱 Coming very soon to <strong className="text-foreground">Pune (Maharashtra)</strong>, <strong className="text-foreground">Ratnagiri</strong>, and <strong className="text-foreground">Sangli</strong> regions, before expanding to other Indian states!
-                  </p>
-                </div>
+                <p className="text-xs font-semibold text-foreground/80 leading-snug">
+                  <span className="font-extrabold text-red-500">Outside zone.</span>{" "}
+                  Pick a green circle — Virar, Ghatkopar, Aarey, or Borivali.
+                </p>
               </div>
               <button 
                 type="button" 
                 onClick={() => setShowWarning(false)}
-                className="w-full md:w-auto px-5 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl text-xs font-black hover:opacity-90 active:scale-95 transition-all"
+                className="shrink-0 text-foreground/40 hover:text-foreground text-lg leading-none font-bold transition-colors px-1"
+                aria-label="Dismiss"
               >
-                Choose Available Zone
+                ×
               </button>
             </motion.div>
           )}
