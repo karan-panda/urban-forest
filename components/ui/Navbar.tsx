@@ -26,17 +26,17 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-6 items-center">
             <Link href="/personalize" className="text-foreground/80 hover:text-primary transition-colors font-medium">Plant a Tree</Link>
-            <Link href="/dashboard" className="text-foreground/80 hover:text-primary transition-colors font-medium">My Forest</Link>
-            <Link href="/impact" className="text-foreground/80 hover:text-primary transition-colors font-medium">Impact</Link>
-            <ThemeToggle />
+            <Link href="/story" className="text-foreground/80 hover:text-primary transition-colors font-medium">Our Story</Link>
             <Link 
-              href="/personalize" 
-              className="bg-primary text-primary-foreground px-5 py-2 rounded-full font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              href="/track" 
+              className="border border-emerald-500/30 dark:border-emerald-400/20 text-foreground hover:text-primary hover:border-primary transition-all px-4 py-1.5 rounded-full font-semibold flex items-center gap-1.5 text-sm bg-white/40 dark:bg-emerald-950/10 shadow-sm"
             >
-              Get Started
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              Track Your Tree 🔒
             </Link>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,8 +58,18 @@ export default function Navbar() {
         >
           <div className="flex flex-col space-y-4">
             <Link href="/personalize" onClick={() => setIsOpen(false)} className="text-foreground hover:text-primary font-medium">Plant a Tree</Link>
-            <Link href="/dashboard" onClick={() => setIsOpen(false)} className="text-foreground hover:text-primary font-medium">My Forest</Link>
-            <Link href="/impact" onClick={() => setIsOpen(false)} className="text-foreground hover:text-primary font-medium">Impact</Link>
+            <Link href="/story" onClick={() => setIsOpen(false)} className="text-foreground hover:text-primary font-medium">Our Story</Link>
+            <Link 
+              href="/track" 
+              onClick={() => setIsOpen(false)} 
+              className="border border-emerald-500/25 text-foreground hover:text-primary hover:border-primary transition-all px-4 py-2.5 rounded-xl font-semibold flex items-center justify-between text-sm bg-emerald-500/5"
+            >
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                Track Your Tree
+              </span>
+              <span className="text-[9px] bg-amber-500/10 text-amber-600 dark:text-amber-400 px-2 py-0.5 rounded-full font-black uppercase">Locked 🔒</span>
+            </Link>
           </div>
         </motion.div>
       )}

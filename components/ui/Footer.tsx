@@ -27,9 +27,7 @@ export default function Footer() {
             <h4 className="font-bold text-white uppercase text-sm tracking-wider">Explore</h4>
             <div className="flex flex-col space-y-2 text-sm text-secondary-foreground/80">
               <Link href="/personalize" className="hover:text-white transition-colors">Plant a Tree</Link>
-              <Link href="/dashboard" className="hover:text-white transition-colors">My Forest</Link>
-              <Link href="/impact" className="hover:text-white transition-colors">Our Impact</Link>
-              <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+              <Link href="/story" className="hover:text-white transition-colors">Our Story</Link>
             </div>
           </div>
 
